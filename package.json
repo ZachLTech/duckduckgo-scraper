@@ -1,0 +1,20 @@
+{
+  "name": "testjsonparsejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "browserify": "^17.0.0",
+    "cheerio": "^1.0.0-rc.12",
+    "google-search-results-nodejs": "^2.1.0",
+    "puppeteer": "^20.4.0",
+    "serpapi": "^1.1.1"
+  }
+}
