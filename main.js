@@ -1,10 +1,11 @@
 const puppeteer = require('puppeteer');
+let query = "marlin wayans".replace(' ', '+');
 
 async function scrapeAll(){
     const browser = await puppeteer.launch( { headless: true });
     const page = await browser.newPage();
     
-    await page.goto('https://duckduckgo.com/?q=ducks&t=hc&va=b&ia=web');
+    await page.goto(`https://duckduckgo.com/?q=${query}&t=hc&va=b&ia=web`);
 
 
     // Execute code in the DOM
@@ -39,7 +40,7 @@ async function scrapeImage(){
     const browser = await puppeteer.launch( { headless: true });
     const page = await browser.newPage();
     
-    await page.goto('https://duckduckgo.com/?q=ducks&t=hc&va=b&iax=images&ia=images');
+    await page.goto(`https://duckduckgo.com/?q=${query}&t=hc&va=b&iax=images&ia=images`);
     await page.waitForSelector('.tile--img__img', { timeout: 5_000 });
     const images = await page.evaluate( () => {
 
