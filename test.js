@@ -1,5 +1,5 @@
 const SerpApi = require('google-search-results-nodejs');
-const search = new SerpApi.GoogleSearch("0a6d975a83104757692bd4b17ac21144f517e7ece4ddccb549ca94913cbcf2f6");
+const search = new SerpApi.GoogleSearch("no api key for you!");
 
 const params = {
   q: "Coffee",
