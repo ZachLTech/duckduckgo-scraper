@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-let query = "marlin wayans".replace(' ', '+');
+let query = "frogs".replace(' ', '+');
 
 async function scrapeAll(){
     const browser = await puppeteer.launch( { headless: true });
@@ -7,7 +7,14 @@ async function scrapeAll(){
     
     await page.goto(`https://duckduckgo.com/?q=${query}&t=hc&va=b&ia=web`);
 
-
+    
+    const moreResults = async () => {
+        await page.click('button#more-results');
+    }
+    moreResults;
+    setTimeout(moreResults, 1000);
+    setTimeout(moreResults, 1000);
+    setTimeout(moreResults, 1000);
     // Execute code in the DOM
     const data = await page.evaluate( () => {
 
