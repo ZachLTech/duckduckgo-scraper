@@ -2,19 +2,24 @@ const puppeteer = require('puppeteer');
 let query = "frogs".replace(' ', '+');
 
 async function scrapeAll(){
-    const browser = await puppeteer.launch( { headless: true });
+    const browser = await puppeteer.launch( { headless: false });
     const page = await browser.newPage();
     
     await page.goto(`https://duckduckgo.com/?q=${query}&t=hc&va=b&ia=web`);
 
-    
-    const moreResults = async () => {
-        await page.click('button#more-results');
-    }
-    moreResults;
-    setTimeout(moreResults, 1000);
-    setTimeout(moreResults, 1000);
-    setTimeout(moreResults, 1000);
+
+
+    await page.click('button#more-results');
+    await page.waitForSelector('button#more-results:not([disabled])', { timeout: 5_000 });
+    await page.click('button#more-results');
+    await page.waitForSelector('button#more-results:not([disabled])', { timeout: 5_000 });
+    await page.click('button#more-results');
+    await page.waitForSelector('button#more-results:not([disabled])', { timeout: 5_000 });
+    await page.click('button#more-results');
+
+
+
+
     // Execute code in the DOM
     const data = await page.evaluate( () => {
 
